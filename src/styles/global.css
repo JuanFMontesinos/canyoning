@@ -38,3 +38,27 @@
 .shadow {
 	box-shadow: -5px 3px 8px 1px rgba(0, 0, 0, 0.12);
 }
+
+.header-social-icons {
+	display: flex;
+	gap: 1rem; /* Adjust gap for better spacing */
+  }
+  
+  .header-links {
+	display: flex;
+	gap: 1rem;
+  }
+  
+  .space-x-4 {
+	margin-right: 0.5rem; /* Adjust spacing as needed */
+  }
+  
+  @media (min-width: 768px) {
+	.header-links {
+	  margin-right: auto;
+	}
+  
+	.header-social-icons {
+	  gap: 1rem; /* Adjust gap for larger screens */
+	}
+  }
