@@ -2,10 +2,12 @@
 import HeaderLink from '@/components/HeaderLink'
 import TwitterIcon from '@/components/icons/TwitterIcon'
 import InstagramIcon from '@/components/icons/InstagramIcon'
+import Search from '@/components/Search'
+
 import MenuIcon from './icons/MenuIcon.astro'
-import SearchIcon from './icons/SearchIcon.astro'
 import TagIcon from './icons/TagIcon.astro'
 import ToggleTheme from './ToggleTheme.astro'
+import SkullIcon from './icons/SkullIcon.astro'
 
 // ADD YOUR SOCIAL NETWORKS HERE
 const SOCIALNETWORKS = [
@@ -27,10 +29,16 @@ const SOCIALNETWORKS = [
 
 	<nav class='flex items-center flex-1 justify-end space-x-4'>
 		<div class='flex items-center space-x-4 md:space-x-6'>
+			<HeaderLink
+				href='/post/fatal-canyonning-accidents-list/'
+				class='flex items-center gap-1 text-2xl md:text-base'
+			>
+				<SkullIcon /> Fatal Accidents
+			</HeaderLink>
 			<HeaderLink href='/tags' class='flex items-center gap-1 text-2xl md:text-base'>
 				<TagIcon /> Tags
 			</HeaderLink>
-			<HeaderLink href='/timeline' class='flex items-center gap-1 text-2xl md:text-base'>
+			<HeaderLink href='/timeline' class='flex items-center gap-1 Setext-2xl md:text-base'>
 				Timeline
 			</HeaderLink>
 			{
@@ -45,15 +53,20 @@ const SOCIALNETWORKS = [
 					</HeaderLink>
 				))
 			}
-			<SearchIcon />
 			<ToggleTheme />
 		</div>
 	</nav>
 
-	<button id='astro-header-drawer-button' type='button' class='md:ml-6 md:hidden'>
-		<MenuIcon />
-		<span class='sr-only'>Show Menu</span>
-	</button>
+	<div class='flex items-center gap-3 md:pl-3' transition:persist='navbar'>
+		<div>
+			<Search />
+		</div>
+		<ToggleTheme />
+		<button id='astro-header-drawer-button' type='button' class='md:ml-6 md:hidden'>
+			<MenuIcon />
+			<span class='sr-only'>Show Menu</span>
+		</button>
+	</div>
 </header>
 <script>
 	document.addEventListener('click', (event) => {
