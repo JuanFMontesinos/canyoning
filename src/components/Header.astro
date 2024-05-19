@@ -2,9 +2,8 @@
 import HeaderLink from '@/components/HeaderLink'
 import TwitterIcon from '@/components/icons/TwitterIcon'
 import InstagramIcon from '@/components/icons/InstagramIcon'
-import Search from '@/components/Search'
-
 import MenuIcon from './icons/MenuIcon.astro'
+import Search from '@/components/Search'
 import TagIcon from './icons/TagIcon.astro'
 import ToggleTheme from './ToggleTheme.astro'
 import SkullIcon from './icons/SkullIcon.astro'
@@ -16,49 +15,56 @@ const SOCIALNETWORKS = [
 		url: 'https://www.instagram.com/jfmontgar/',
 		icon: InstagramIcon
 	},
+
 	{
 		name: 'Twitter',
-		url: 'https://x.com/jfmontgar',
+		url: 'https://github.com/danielcgilibert/blog-template',
 		icon: TwitterIcon
 	}
 ]
 ---
 
-<header class='relative flex items-center h-12 font-semibold justify-between px-4'>
-	<a class='text-lg' href='/canyoning'>Home</a>
+<header class='relative flex items-center h-12 font-semibold'>
+	<a class='text-lg mr-auto' href='/canyoning'>Home</a>
 
-	<nav class='flex items-center flex-1 justify-end space-x-4'>
-		<div class='flex items-center space-x-4 md:space-x-6'>
-			<HeaderLink
-				href='/canyoning/post/fatal-canyonning-accidents-list/'
-				class='flex items-center gap-1 text-2xl md:text-base'
+	<div
+		id='astro-header-drawer'
+		class='oshadow rounded-l-lg md:bg-transparent dark:md:bg-transparent bg-white dark:bg-[#0a0910] md:shadow-none md:rounded-none md:border-none md:h-auto md:static absolute transition-transform duration-300 ease-in translate-x-96 md:translate-x-0 top-12 -right-5 pl-4 pt-6 pb-4 md:p-0 h-[265px] w-[200px] z-50'
+	>
+		<nav
+			class='flex h-full flex-col justify-between gap-12 text-left md:flex-row md:w-full md:gap-5'
+		>
+			<div
+				class='flex flex-col gap-4 md:flex-row md:border-r-2 border-black pr-4 dark:border-white md:-ml-60'
 			>
-				<SkullIcon /> Fatal Accidents
-			</HeaderLink>
-			<HeaderLink href='/canyoning/tags' class='flex items-center gap-1 text-2xl md:text-base'>
-				<TagIcon /> Tags
-			</HeaderLink>
-			<HeaderLink
-				href='/canyoning/timeline'
-				class='flex items-center gap-1 Setext-2xl md:text-base'
-			>
-				Timeline
-			</HeaderLink>
-			{
-				SOCIALNETWORKS.map((network) => (
-					<HeaderLink
-						href={network.url}
-						target='_blank'
-						aria-label={network.name}
-						class='text-2xl md:text-base'
-					>
-						<network.icon />
-					</HeaderLink>
-				))
-			}
-			<ToggleTheme />
-		</div>
-	</nav>
+				<HeaderLink
+					href='/canyoning/post/fatal-canyonning-accidents-list/'
+					class='flex items-center gap-1 text-2xl md:text-base'
+				>
+					<SkullIcon /> Fatal Accidents
+				</HeaderLink>
+				<HeaderLink
+					href='/canyoning/timeline'
+					class='flex items-center gap-1 text-2xl md:text-base'
+				>
+					Timeline
+				</HeaderLink>
+				<HeaderLink href='/canyoning/tags' class='flex items-center gap-1 text-2xl md:text-base'>
+					<TagIcon /> Tags
+				</HeaderLink>
+			</div>
+
+			<div class='flex justify-center items-center md:justify-end gap-3 md:p-0'>
+				{
+					SOCIALNETWORKS.map((network) => (
+						<HeaderLink class='' href={network.url} target='_blank' aria-label={network.name}>
+							<span>{<network.icon />} </span>
+						</HeaderLink>
+					))
+				}
+			</div>
+		</nav>
+	</div>
 
 	<div class='flex items-center gap-3 md:pl-3' transition:persist='navbar'>
 		<div>
@@ -71,6 +77,7 @@ const SOCIALNETWORKS = [
 		</button>
 	</div>
 </header>
+
 <script>
 	document.addEventListener('click', (event) => {
 		const menu = document.getElementById('astro-header-drawer')
