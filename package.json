@@ -2,6 +2,7 @@
 	"name": "blog-template",
 	"type": "module",
 	"version": "1.1.0",
+	"packageManager": "pnpm@9.1.1",
 	"description": "A template for creating a blog with Astro",
 	"author": "danielcgilibert",
 	"license": "GPL-3.0-only",
