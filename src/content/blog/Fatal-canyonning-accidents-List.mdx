@@ -1,7 +1,7 @@
 ---
 heroImage: /src/assets/images/deceased.webp
 category: Others
-description: Fatal canyonning accidents
+description: Fatal canyoning accidents
 pubDate: 2024-05-18T22:00:00.000Z
 tags:
   - accidents
@@ -13,81 +13,27 @@ The reason behind this dark list is two-fold. Firstly, I want to honor and remem
 If you wish to include some event, please send me an email to [canyoning@juanmontesinos.com ](mailto:canyoning@juanmontesinos.com)copy paste this template and just replace:
 
 ```
-## Title
-
-Details about the person, and few details about the accident
-
-Tags separated by spaces pointing to the region
-**When**: Date
-**Possible reason**: Description of the possible causes
-**Where**: [Canyon name](Link-to-canyon-info)
-**Local news**: [Name of the source](link-to-local-media-bibliography)
+{
+    "title": "Description of the accident",
+    "country": "Country name",
+    "deceased": [
+        {
+            "name": "name of the person",
+            "age": "age of the person",
+            "sex": "biological sex of the person",
+            "nationality": "nationality of the person. Place of birth prevails if known."
+        }
+    ],
+    "year": 2000,
+    "description": "Respectful, informative description of the people who passed away, as well as a short description of the event.",
+    "tags": ["Aragon", "Pyrenees", "Austria", "Alps"],
+    "date": "DD/MM/YYYY",
+    "reason": "Description of the accident and possible reasons and lessons other can learn.",
+    "location":{"canyon": "name of the canyon", "link": "link to a technical description of the canyon."},
+    "media": [{"resouce":"name of the newspaper or media source", "link": "link-to-the-media"}]
+}
 ```
 
-# Spain (2024)
+import FatalAccidents from '/src/components/FatalAccidents.astro'
 
-**35 m. fall from a rappel**
-
-Javier Braojos, a 47-year-old spanish policeman passed away after falling from a rappel.
-
-Aragon Pyrenees Spain\
-**When**: 09/05/2024\
-**Possible reason**: Unknown.\
-**Where**: [Barranco Sía](https://www.docuwiki.infobarrancos.es/doku.php?id=barrancos:huesca:sia)\
-**Local news**: [Heraldo de Aragon](https://www.heraldo.es/noticias/aragon/huesca/2024/05/10/muere-otro-barranquista-al-caer-en-un-rapel-en-yesero-1732593.html)
-
-**Drowned**
-
-Miguel Ángel Hernández Andrés, a 35-year-old spanish firefighter passed drowned in a sensible rappel.
-
-Aragon Pyrenees Spain\
-**When**: 30/04/2024\
-**Possible reason**: High (yet not impossible) flow. Alone.\
-**Personal hypotesis**: 90-meter rappel split into 2x45m with a water pool in between. With high flow, the waterfall can push you into the rock. There is a rock in the water pool where ropes can get entangled to.\
-**Where**: [Barranco de Sorrosal](https://www.docuwiki.infobarrancos.es/doku.php?id=barrancos:huesca:barranco_del_sorrosal)\
-**Local news**: [Heraldo de Aragon](https://www.heraldo.es/noticias/aragon/huesca/2024/05/10/muere-otro-barranquista-al-caer-en-un-rapel-en-yesero-1732593.html)\
-[IG video from rescue](https://www.instagram.com/reel/C6br8PiIHP6)
-
-**Stuck in stones**
-
-A 60-year-old spanish woman from Castilleja de la Cuesta (Sevilla) died drowned.
-
-Jaen Spain\
-**When**: 15/04/2024\
-**Possible reason**: She got stuck between two stones at the chest. A waster stream was passing
-over her. Died drowned.\
-**Where**: [Barranco de la Bolera](https://www.docuwiki.infobarrancos.es/doku.php?id=barrancos:jaen:bolera)\
-**Local news**: [Lo que pasa en Pozo Alcón](https://loquepasaenpozoalcon.es/muere-una-mujer-al-practicar-barranquismo-en-el-guadalentin/)\
-[Cadena Ser](https://cadenaser.com/andalucia/2024/04/16/asi-fue-el-arriesgado-rescate-del-cuerpo-de-la-mujer-fallecida-en-pozo-alcon-mientras-hacia-barranquismo-radio-jaen/)
-
-**Unknown**
-
-A 53-year-old french woman passed away.
-
-Aragon Pyrenees Spain\
-**When**: 14/04/2024\
-**Possible reason**: Unknown. Found under water.\
-**Where**: [Concusa Inferior](https://www.docuwiki.infobarrancos.es/doku.php?id=barrancos:huesca:consusa_inferior)\
-**Local news**: [El Periódico de Aragon](https://www.heraldo.es/noticias/aragon/huesca/2024/05/10/muere-otro-barranquista-al-caer-en-un-rapel-en-yesero-1732593.html)
-
-# Spain (2023)
-
-**Leg stuck when rappeling**
-
-Roberto Paz Diz 35-year-old spanish man from A Illa and settled in Valencia passed away after getting stuck when rappeling.
-
-Granada Spain Sierra Nevada\
-**When**: 19/11/2023\
-**Possible reason**: Leg stuck while rappeling. Died drowned.\
-**Where**: [Barranco del río Trévelez](https://www.docuwiki.infobarrancos.es/doku.php?id=barrancos:granada:trevelez)\
-**Local news**: [Faro de Vigo](https://www.farodevigo.es/arousa/2023/11/21/muere-joven-illa-barranquismo-granada-94923581.html)
-
-**Couple died drowned**
-
-Carlos Iván Iglesias Peña, a 43-year-old spaniard from Burgos and his girlfriend, Beatriz de Cabo González, a 37-year-old spaniard from Pitiegua (Salamanca) passed away.
-
-Spain Asturias
-**When**: 13/09/2023\
-**Possible reason**: The man was found stuck between two stones. The woman was found upstream, in a waterfall. High flow after intense rain.\
-**Where**: [Barranco de Pompedru](https://www.docuwiki.infobarrancos.es/doku.php?id=barrancos:asturias:pompedru)\
-**Local news**: [Diario de Burgos](https://www.diariodeburgos.es/noticia/za5657526-e0cf-3e48-8d298430beb23320/202309/muere-un-montanero-burgales-al-hacer-barranquismo-en-asturias)
+<FatalAccidents />
